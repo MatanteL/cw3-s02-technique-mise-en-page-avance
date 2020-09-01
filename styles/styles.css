@@ -4,19 +4,166 @@
 /* font-family: 'Bungee Shade', cursive; */
 
 /* LES VARIABLES CSS ICI */
+:root{
+    --font-primaire: 'Cardo', serif;
+    --font-secondaire: 'Bungee Shade', cursive;
+
+    --taille-h1: 36px;
+    --taille-h2: 80px;
+    --taille-hero1: 24px;
+    --taille-h3: 40px;
+    --taille-h4: 18px;
+    --taille-body: 18px;
+    --taille-hero2: 40px;
+
+    --couleur-principale: #a7029a;
+    --couleur-secondaire: darkgray;
+    --black: #000;
+    --white: #fff;
+
+    --couleur-gradient: linear-gradient(35.74deg, rgba(167, 2, 154, 0.7) -2.92%, rgba(167, 2, 154, 0) 106.13%);
+    mix-blend-mode: normal;
+    --couleur-header-footer: var(--black);
+    --couleur-titres: var(--white);
+    --couleur-texte: var(--black);
+}
+
 
 /*---------------------- Generic ----------------------*/
 
 /* Mettre la ligne universelle pour le box-sizing */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
 
+body{
+    margin: 0;
+}
+
+li{
+    list-style: none;
+}
+
+h1, h2, h3, h4{
+    margin:0;
+}
 
 
 /*---------------------- Elements ----------------------*/
+body, h3, h4{
+    font-family: var(--font-primaire);
+}
+
+h1, h2{
+    font-family: var(--font-secondaire);
+}
+
+h1 {
+    font-size: var(--taille-h1);
+}
+
+h2{
+    font-size: var(--taille-h2);
+}
+
+h3{
+    font-size: var(--taille-h3);
+}
+
+h4{
+    font-size: var(--taille-h4);
+    text-transform: uppercase;
+}
+
+.conteneur{
+    width: 1140px;
+    margin: 0 auto;
+}
+
+header{
+    z-index: 3;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 73px;
+    color: var(--couleur-titres);
+    background-color: var(--couleur-header-footer);
+}
+
+.hero{
+    height: 88vh;
+    width: 100%;
+    background-color: var(--black);
+
+    position: relative;
+}
+
+.hero video{
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+
+    object-fit: cover;
+}
 
 
+.hero .content{
 
+    width: 100%;
+    height: 100%;
 
+    color: var(--couleur-titres);
+    position: absolute;
+    top: 0;
+    left: 0;
 
+    z-index: 2;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--couleur-gradient);
+}
+
+.hero::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.interet{
+    background: url("../images/bg-interet.jpg");
+}
+
+.cartes{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+}
+
+.carte {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 352px;
+    height: 367px;
+    background-color: var(--white);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+
+}
+.carte img{
+    height: 151px;
+    width: 151px;
+}
 /*---------------------- Components ----------------------*/
 
 
